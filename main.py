@@ -28,8 +28,16 @@ while running:
     for projectile in game.player.all_projectiles:
         projectile.move()
 
+    # résupérer les monstres
+    for monster in game.all_monsters:
+        monster.forward()
+
+
     # appliquer l'ensemble des images de mon groupe de projectiles
     game.player.all_projectiles.draw(screen)
+
+    # appliquer l'ensemble des images de mon groupe de monstres
+    game.all_monsters.draw(screen)
 
 
 # Vérifier si le joueur souhaite aller à gauche ou à droite
@@ -39,8 +47,6 @@ while running:
         game.player.move_left()
 
     print(game.player.rect.x)
-
-# todo tuto 4/10 :
 
     # MAJ écran
     pygame.display.flip()
