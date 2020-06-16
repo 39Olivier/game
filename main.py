@@ -22,6 +22,10 @@ while running:
     # image joueur
     screen.blit(game.player.image, game.player.rect)
 
+    # actualiser barre vie joueur
+
+    game.player.update_health_bar(screen)
+
 
 # résupérer les projectiles du joueur
 
@@ -31,6 +35,7 @@ while running:
     # résupérer les monstres
     for monster in game.all_monsters:
         monster.forward()
+        monster.update_health_bar(screen)
 
 
     # appliquer l'ensemble des images de mon groupe de projectiles
